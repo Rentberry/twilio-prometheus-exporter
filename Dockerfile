@@ -5,4 +5,4 @@ RUN apk --no-cache add ca-certificates
 COPY ./twilio-prometheus-exporter .
 ENTRYPOINT ["./twilio-prometheus-exporter"]
 
-EXPOSE 9153
+EXPOSE 9860
