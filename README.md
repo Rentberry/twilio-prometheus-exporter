@@ -1,9 +1,9 @@
 # Twilio usage exporter for Prometheus
 ```
-docker run -p 9153:9153 \
-    -e TWILIO_ACCOUNT_ID=your-twilio-account-id \
-    -e TWILIO_SID=your-twilio-sid \
-    -e TWILIO_API_KEY=your-twilio-api-key \
+docker run -p 9860:9860 \
+    -e TWILIO_EXPORTER_ACCOUNT_ID=your-twilio-account-id \
+    -e TWILIO_EXPORTER_SID=your-twilio-sid \
+    -e TWILIO_EXPORTER_API_KEY=your-twilio-api-key \
     rentberry/twilio-prometheus-exporter:latest
 ```
 

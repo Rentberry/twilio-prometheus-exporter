@@ -15,10 +15,10 @@ var (
 )
 
 type config struct {
-	Addr      string `default:":9153"`
-	AccountId string `envconfig:"TWILIO_ACCOUNT_ID" required:"true"`
-	Sid       string `envconfig:"TWILIO_SID" required:"true"`
-	ApiKey    string `envconfig:"TWILIO_API_KEY" required:"true"`
+	Addr      string `envconfig:"TWILIO_EXPORTER_LISTEN_ADDR" default:":9860"`
+	AccountId string `envconfig:"TWILIO_EXPORTER_ACCOUNT_ID" required:"true"`
+	Sid       string `envconfig:"TWILIO_EXPORTER_SID" required:"true"`
+	ApiKey    string `envconfig:"TWILIO_EXPORTER_API_KEY" required:"true"`
 }
 
 func main() {

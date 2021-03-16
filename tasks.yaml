@@ -1,5 +1,5 @@
 # For more information see: https://github.com/taskctl/taskctl
 tasks:
-  cs:fmt:
+  fmt:
     commands:
-      - go lint ./...
+      - go fmt ./...
