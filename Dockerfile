@@ -1,20 +1,10 @@
-# Builder
-FROM golang:1.16-alpine AS builder
-
-RUN apk --no-cache add git g++ linux-headers
-
-COPY ./ /go/src
-WORKDIR /go/src/
-RUN GOOS=linux GOARCH=amd64 go build -o /main .
-
-# Service
-FROM alpine:latest AS runtime
+FROM alpine:latest
 
 RUN apk --no-cache add ca-certificates
 
 WORKDIR /root
-COPY --from=builder /main .
+COPY dist/twilio-prometheus-exporter_linux_amd64/twilio-prometheus-exporter .
 USER root
-CMD ["./main"]
+CMD ["./twilio-prometheus-exporter"]
 
 EXPOSE 9153
