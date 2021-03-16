@@ -1,0 +1,18 @@
+builds:
+  - env:
+      - CGO_ENABLED=0
+    goos:
+      - linux
+    goarch:
+      - amd64
+      - armv7
+
+dockers:
+  -
+    goos: linux
+    goarch: amd64
+    image_templates:
+      - "rentberry/twilio-prometheus-exporter:latest"
+      - "rentberry/twilio-prometheus-exporter:{{ .Tag }}"
+    skip_push: auto
+    dockerfile: Dockerfile
